@@ -135,7 +135,7 @@
 }
 
 .widget-dnd > switch slider {
-    background-color: @color8;
+    background-color: @color10;
     border-radius: 0px;
     min-width: 18px; /* Ensure slider has a minimum width */
     min-height: 18px; /* Ensure slider has a minimum height */

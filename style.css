@@ -1,0 +1,142 @@
+@import "/home/cyber-green/.cache/wal/colors-waybar.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Iosevka";
+    font-size: 18px;
+    min-height: 0;
+}
+
+.control-center {
+    background-color: @background;
+    border: 1px solid @background-light;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 0px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+}
+
+.notification-row {
+    margin: 10px 0px;
+    padding: 0px;
+}
+
+.notification {
+    background-color: @background;
+    border: 1px solid @background-light;
+    border-radius: 20px;
+    padding: 0px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+}
+
+.notification-content {
+    background-color: transparent;
+}
+
+.summary {
+    color: @foreground;
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.time {
+    color: @color7;
+    background-color: transparent;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+}
+
+.body {
+    color: @foreground;
+    background-color: transparent;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.close-button {
+    background-color: @color1;
+    color: @background;
+    border-radius: 99px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.close-button:hover {
+    background-color: @color2;
+    color: @background;
+}
+
+.notification-default-action,
+.notification-action {
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: @color1;
+    color: @background;
+    border: 1px solid @color2;
+    font-weight: bold;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background-color: @color2;
+    color: @background;
+    border: 1px solid @color1;
+}
+
+.widget-title {
+    color: @foreground;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.widget-title > button {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: @color1;
+    color: @background;
+    border: 1px solid @color2;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.widget-title > button:hover {
+    background-color: @color2;
+    border: 1px solid @color1;
+}
+
+.widget-dnd {
+    margin: 15px 0px;
+    font-size: 1.2rem;
+    color: @foreground; /* Ensure text is visible */
+}
+
+.widget-dnd > switch {
+    font-size: initial;
+    border-radius: 15px;
+    background-color: @background-light; /* Use a distinct background */
+    border: 1px solid @color2;
+    box-shadow: none;
+    min-width: 40px; /* Ensure switch has a minimum width */
+    min-height: 20px; /* Ensure switch has a minimum height */
+}
+
+.widget-dnd > switch:checked {
+    background-color: @color4;
+    border: 1px solid @color4;
+}
+
+.widget-dnd > switch slider {
+    background-color: @foreground;
+    border-radius: 99px;
+    min-width: 18px; /* Ensure slider has a minimum width */
+    min-height: 18px; /* Ensure slider has a minimum height */
+}

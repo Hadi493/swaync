@@ -36,7 +36,8 @@
       "button-text": "Clear All"
     },
     "dnd": {
-      "text": "Do Not Disturb"
+      "text": "Do Not Disturb",
+      "type": "switch"
     },
     "label": {
       "max-lines": 5,

@@ -22,7 +22,7 @@
 
     "timeout": 3,
     "timeout-low": 2,
-    "timeout-critical": 4,
+    "timeout-critical": 3,
  
     "fit-to-screen": false,
     "keyboard-shortcuts": true,
@@ -75,21 +75,21 @@
         "buttons-grid": {
             "actions": [
                 {
-                    "label": " ",
+                    "label": "  ",
                     "type": "toggle",
                     "active": true,
                     "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
                     "update-command": "sh -c '[[ $(nmcli r wifi) == \"enabled\" ]] && echo true || echo false'"
                 },
                 {
-                    "label": "󰂯",
+                    "label": "󰂯 ",
                     "type": "toggle",
                     "active": true,
                     "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && rfkill unblock bluetooth || rfkill block bluetooth'",
                     "update-command": "sh -c \"rfkill list bluetooth | grep -q \"Soft blocked: no\" && echo true || echo false\""
                 },
                 {
-                    "label": " ",
+                    "label": "  ",
                     "type": "toggle",
                     "active": false,
                     "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && pactl set-source-mute @DEFAULT_SOURCE@ 1 || pactl set-source-mute @DEFAULT_SOURCE@ 0'",

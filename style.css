@@ -1,142 +1,258 @@
-@import "/home/cyber-green/.cache/wal/colors-waybar.css";
+/* Catppuccin (Mocha) colors from Waybar */
+@define-color background #1e1e2e;
+@define-color foreground #cdd6f4;
+@define-color red #f38ba8;
+@define-color green #a6e3a5;
+@define-color yellow #f9e2af;
+@define-color blue #99d7aa;
+@define-color magenta #cba6f7;
+@define-color cyan #89dceb;
+@define-color white #bac2de;
+@define-color orange #fab387;
+@define-color black #11111b;
+
+/* Aliases for swaync */
+@define-color gray #313244; /* background-light from waybar */
+@define-color select #313244; /* background-light from waybar */
 
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "Iosevka";
+    outline: none;
+    font-family: "Iosevka Nerd Font";
     font-size: 18px;
-    min-height: 0;
+    text-shadow: none;
+    color: @foreground;
+    background-color: transparent;
+    background: transparent;
 }
 
 .control-center {
-    background-color: @background;
-    border: none;
-    border-radius: 0px;
-    margin: 10px;
-    padding: 0px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    opacity: 0.9;
-}
-
-.notification-row {
-    margin: 10px 0px;
-    padding: 0px;
-}
-
-.notification {
-    background-color: @background;
-    border: none;
-    border-radius: 0px;
-    padding: 0px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    opacity: 0.9;
-}
-
-.notification-content {
     background-color: transparent;
-}
-
-.summary {
-    color: @foreground;
-    background-color: transparent;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.time {
-    color: @color7;
-    background-color: transparent;
-    font-size: 0.8rem;
-    margin-bottom: 12px;
-}
-
-.body {
-    color: @foreground;
-    background-color: transparent;
-    font-weight: normal;
-    margin-bottom: 12px;
-}
-
-.close-button {
-    background-color: @color1;
-    color: @background;
-    border-radius: 0px;
-    margin: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.65);
     padding: 5px;
 }
 
-.close-button:hover {
-    background-color: @color2;
-    color: @background;
+.control-center .notification-row .notification-background {
+    border-radius: 0px;
+    margin-top: 5px;
 }
 
-.notification-default-action,
-.notification-action {
-    padding: 8px 12px;
+.notification {
+    background-color: alpha(@background, 1.0);
+    border: 1px solid @gray;
+}
+
+.notification > *:last-child > *  {
     margin: 5px;
-    border-radius: 0px;
-    background-color: @color1;
-    color: @background;
-    border: none;
-    font-weight: bold;
 }
 
-.notification-default-action:hover,
-.notification-action:hover {
-    background-color: @color2;
-    color: @background;
-    border: none;
+.summary { font-size: 1.1rem; }
+.time { font-size: 0.8rem; }
+.body { font-size: 1rem; }
+
+.notification-content {
+    padding: 15px 10px 10px 20px;
 }
 
-.widget-title {
-    color: @foreground;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+.notification-action > button {
+    padding: unset;
+    margin: unset;
 }
-
-.widget-title > button {
+.notification-action > label {
     font-size: 1rem;
-    font-weight: bold;
-    background-color: @color1;
-    color: @background;
-    border: none;
+    font-weight: normal;
+}
+
+.notification.critical {
+    background-color: alpha(@red, 1.0);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.65);
+}
+.notification.low,
+.notification.normal  {
+    background-color: alpha(@background, 1.0);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.65);
+}
+
+.close-button {
+    background-color: alpha(@gray, 1.0);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
+}
+.close-button:hover {
+    background-color: alpha(@red, 0.8);
+}
+
+.notification-group-header,
+.notification-group-icon {
+    font-size: 0.9rem;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
+    background-color: @gray;
+}
+
+.notification-group-collapse-button:hover {
+    background-color: alpha(@blue, 0.8);
+}
+.notification-group-close-all-button:hover {
+    background-color: alpha(@red, 0.8);
+}
+
+trough highlight {
+    background: @blue;
+}
+scale trough {
+    margin: 0rem 1rem;
+    background-color: @gray;
+    min-height: 8px;
+    min-width: 70px;
+}
+slider {
+    background-color: transparent;
+	width: 1px;
+}
+tooltip {
+    background-color: @gray;
+}
+
+/*** Widgets ***/
+/* Buttons widget */
+.widget-buttons-grid {
+    font-size: 1rem;
+    padding: 20px 20px 10px;
+    margin: unset;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    background: @gray;
+    box-shadow: 0px 0px 10px alpha(@background, 0.8);
     border-radius: 0px;
-    padding: 5px 10px;
-    margin-left: 10px;
+    min-width: 60px;
+    min-height: 30px;
+    padding: 6px;
+    margin: 0 3px 0;
+    transition: all .5s ease;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: @select;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+    background: alpha(@blue, 0.5);
+}
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked:hover {
+    background: alpha(@blue, 0.8);
 }
 
-.widget-title > button:hover {
-    background-color: @color2;
+/* Mpris widget */
+@define-color mpris-album-art-overlay alpha(@background, 0.85);
+@define-color mpris-button-hover alpha(@background, 0.5);
+
+.widget-mpris .widget-mpris-player {
+    padding: 16px;
+    margin: 16px 20px;
+    background-color: @mpris-album-art-overlay;
+    border-radius: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+    border: 1px solid @gray;
+}
+.widget-mpris .widget-mpris-player .widget-mpris-album-art {
+    border-radius: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+}
+.widget-mpris .widget-mpris-player .widget-mpris-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0px 8px 8px 8px;
+}
+.widget-mpris .widget-mpris-player .widget-mpris-subtitle {
+    font-size: 1rem;
+}
+.widget-mpris .widget-mpris-player > box > button:hover {
+    background-color: @mpris-button-hover;
+}
+.widget-mpris > box > button:hover {
+    background: alpha(@select, 0.6);
+}
+
+/* Volume widget */
+.widget-volume {
+    padding: 6px 5px 5px 5px;
+    margin: unset;
+    font-size: 1.3rem;
+}
+.widget-volume > box > button {
     border: none;
 }
-
-.widget-dnd {
-    margin: 15px 0px;
-    font-size: 1.2rem;
-    color: @foreground; /* Ensure text is visible */
+.per-app-volume {
+    padding: 4px 8px 8px 8px;
+    margin: 0px 8px 8px 8px;
 }
 
+/* Backlight widget */
+.widget-backlight {
+    padding: 0 0 3px 16px;
+    margin: unset;
+    font-size: 1.1rem;
+}
+
+/* DND widget */
+.widget-dnd {
+    font-weight: bold;
+    margin: unset;
+    padding: 20px 15px 15px 15px;
+}
 .widget-dnd > switch {
     font-size: initial;
     border-radius: 0px;
-    background-color: @foreground; /* Use a distinct background */
+    background: @yellow;
     border: none;
     box-shadow: none;
-    min-width: 40px; /* Ensure switch has a minimum width */
-    min-height: 20px; /* Ensure switch has a minimum height */
+    padding: 3px;
 }
-
 .widget-dnd > switch:checked {
-    background-color: @color4;
-    border: none;
+    background: @green;
+}
+.widget-dnd > switch slider {
+    background: @background;
+    border-radius: 0px;
+    min-width: 18px;
+    min-height: 18px;
 }
 
-.widget-dnd > switch slider {
-    background-color: @color10;
+/* Title widget */
+.widget-title {
+    padding: unset;
+    margin: unset;
+    font-weight: bold;
+    padding: 15px;
+}
+.widget-title > label {
+    font-size: 1.5rem;
+}
+.widget-title > button {
+    padding:unset;
+    margin:unset;
+    text-shadow: none;
+    background: @red;
+    border: none;
+    box-shadow: none;
     border-radius: 0px;
-    min-width: 18px; /* Ensure slider has a minimum width */
-    min-height: 18px; /* Ensure slider has a minimum height */
+    padding:0px 6px;
+    transition: all .7s ease;
+}
+.widget-title > button:hover {
+    background: alpha(@red, 0.8);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.65);
+}
+
+/* Make widgets look like waybar modules */
+.widget-volume,
+.widget-backlight,
+.widget-dnd,
+.widget-title,
+.widget-buttons-grid {
+    background-color: @background;
+    border: 1px solid @gray;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 0px;
 }

@@ -101,7 +101,14 @@
                     "active": false,
                     "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && pactl set-sink-mute @DEFAULT_SINK@ 1 || pactl set-sink-mute @DEFAULT_SINK@ 0'",
                     "update-command": "sh -c '[[ $(pactl get-sink-mute @DEFAULT_SINK@) == *yes* ]] && echo true || echo false'"
-                }
+                },	
+				{
+				  "label": " ",
+				  "type": "toggle",
+				  "active": false,
+				  "command": "sh -c 'pgrep gammastep && pkill gammastep || gammastep -O 2555'",
+				  "update-command": "sh -c 'pgrep gammastep >/dev/null && echo true || echo false'"
+				}
             ]
         }
     }
